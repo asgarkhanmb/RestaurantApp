@@ -1,0 +1,226 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Login Form</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #080710;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 430px;
+            height: 520px;
+            overflow: hidden;
+        }
+        .background .shape {
+            position: absolute;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+        .shape:first-child {
+            background: linear-gradient(#1845ad, #23a2f6);
+            top: -80px;
+            left: -80px;
+        }
+        .shape:last-child {
+            background: linear-gradient(to right, #ff512f, #f09819);
+            bottom: -80px;
+            right: -30px;
+        }
+        form {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            z-index: 1;
+        }
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            color: #ffffff;
+        }
+        input::placeholder {
+            color: #e5e5e5;
+        }
+        button {
+            width: 100%;
+            padding: 15px 0;
+            margin-top: 50px;
+            background-color: #ffffff;
+            color: #080710;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        .social {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .social div {
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #eaf0fb;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 0 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Show Password Style */
+        .show-password {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .show-password input {
+            width: auto;
+            height: auto;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        .media (max-width: 400px) {
+            .background {
+                width: 300px;
+                height: 420px;
+            }
+            form {
+                padding: 30px;
+            }
+            form h3 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+            label {
+                font-size: 14px;
+            }
+            input, button {
+                height: 40px;
+                font-size: 12px;
+            }
+            .social div {
+                padding: 4px 8px;
+                font-size: 12px;
+            }
+        }
+        
+        .media (min-width: 401px) and (max-width: 768px) {
+            .background {
+                width: 90%;
+                height: auto;
+            }
+            form {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Sign In</h3>
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" required>
+        
+        <div class="show-password">
+            <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()">
+            <label for="show-password" style="color: #ffffff;margin-top:1px;">Show Password</label>
+        </div>
+        
+        <div><a asp-controller="Account" asp-action="Forgotpassword" style="color: #ffffff;">Forgot Password?</a></div>
+        <button>Sign In</button>
+        <div class="social">
+            <div><a asp-controller="Account" asp-action="Register" style="color: #ffffff;">Create account</a></div>
+        </div>
+        <div class="footer">
+            <a asp-controller="Home" asp-action="Index" class="nav-item nav-link">Home</a>
+        </div>
+    </form>
+
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('show-password');
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
