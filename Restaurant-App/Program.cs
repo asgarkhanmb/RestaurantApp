@@ -1,5 +1,10 @@
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Restaurant_App.Data;
+using Restaurant_App.Helpers;
+using Restaurant_App.Models;
+using Restaurant_App.Services;
+using Restaurant_App.Services.Interfaces;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-//builder.Services.AddIdentity<AppUser, IdentityRole>()
-//                .AddEntityFrameworkStores<AppDbContext>()
-//                .AddDefaultTokenProviders();
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(opt =>
 {
@@ -25,11 +30,11 @@ builder.Services.Configure<IdentityOptions>(opt =>
 
 
 
-//builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Smtp"));
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Smtp"));
 
 
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//       options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+       options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 
 
@@ -40,7 +45,9 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 
-//builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IInformationService, InformationService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
 
 
 var app = builder.Build();

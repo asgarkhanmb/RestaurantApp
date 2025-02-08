@@ -1,0 +1,21 @@
+﻿@model SliderVMVC
+
+<div class="container-xxl bg-white p-0">
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container my-5 py-5">
+            @foreach (var item in Model.Sliders)
+            {
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-3 text-white animated slideInLeft">@item.Title</h1>
+                        <p class="text-white animated slideInLeft mb-4 pb-2">@item.Description</p>
+                        <a asp-controller="Booking" asp-action="Booking" class="btn btn-primary py-2 px-4">Sifariş</a>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                        <img class="img-fluid" src="~/admin/assets/images/@item.Image" alt="">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
