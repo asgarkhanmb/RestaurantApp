@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\\u018Fsg\u0259rxan\\Desktop\\Restaurant-App\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D9831ED1-69E3-472C-9B06-87AAE4B85FD4}|Restaurant-App\\Restaurant-App.csproj|c:\\users\\\u0259sg\u0259rxan\\desktop\\restaurant-app\\restaurant-app\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9831ED1-69E3-472C-9B06-87AAE4B85FD4}|Restaurant-App\\Restaurant-App.csproj|solutionrelative:restaurant-app\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\\u018Fsg\u0259rxan\\Desktop\\Restaurant-App\\Restaurant-App\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "Restaurant-App\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\\u018Fsg\u0259rxan\\Desktop\\Restaurant-App\\Restaurant-App\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "Restaurant-App\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T18:51:16.069Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
